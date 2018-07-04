@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var arr = []int{5, 2, 4, 6, 1, 3}
+	var arr = []int{5, 2, 4, 6, 1, 3, 7}
 	fmt.Println(mergeSort(arr))
 }
 
