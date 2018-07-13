@@ -1,10 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"generator"
+	"time"
+	"assert"
+	"log"
+	"strconv"
+)
 
 func main() {
-	var arr = []int{5, 2, 4, 6, 1, 3, 7}
-	fmt.Println(mergeSort(arr))
+	arr := generator.GenerateArray(100000)
+	startTime := time.Now().UnixNano()
+	arr = mergeSort(arr)
+	if assert.Array(arr) == false {
+		log.Println("算法有误")
+	}
+	endTime := time.Now().UnixNano()
+	dur := strconv.Itoa(int(endTime - startTime)/1000000)
+	log.Println("总共用时:" + dur + " ms")
 }
 
 
